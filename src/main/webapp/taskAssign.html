@@ -1,0 +1,78 @@
+<div class="add process flow" >
+    <div class="bg-extended">
+        <div class="align-vertical-center">
+
+            <div class="container">
+
+
+
+                    <div class="well  col-sm-12">
+
+                        <div class="well-heading well-primary">
+                            <h1>Assign Task</h1>
+                        </div>
+
+                        <form class="well-body form-horizontal">
+
+                            <div class="  form-group ">
+                                <label  class="control-label col-sm-3">Project*</label>
+                                <div class="col-sm-8">
+                                    <select  class="form-control" ng-model="task.project"
+                                            ng-options="x as x.projectName for x in projectList" ng-change="List(task.project)">
+                                        <option value="">Select Project </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="  form-group ">
+                                <label  class="control-label col-sm-3"for="description">Task Description*</label>
+                                <div class="col-sm-8">
+                                    <input id="description" type="text" class="form-control" ng-model="task.taskDescription" required="required" placeholder="Enter Task"/>
+                                </div>
+                                <span ng-if="error=='true'">No Projects Available</span>
+                            </div>
+
+                            <div class="  form-group ">
+                                <label  class="control-label col-sm-3"for="startDate">Start Date*</label>
+                                <div class="col-sm-8">
+                                    <input id="startDate" type="text" class="form-control" ng-model="task.startDate" required="required"/>
+                                </div>
+                            </div>
+                            <div class="  form-group ">
+                                <label  class="control-label col-sm-3"for="endDate">Due Date*</label>
+                                <div class="col-sm-8">
+                                    <input id="endDate" type="text" class="form-control" ng-model="task.dueDate" required="required"/>
+                                </div>
+                            </div>
+                            <div class="  form-group ">
+                                <label  class="control-label col-sm-3">Who Should do this?*</label>
+                                <div class="col-sm-8">
+                                        <!--<input id="employee" type="text" class="form-control" ng-model="processInfo.processName" required="required"/>-->
+                                    <select id="employeeList" class="form-control" ng-model="emp" ng-options="x as x.username for x in employeeList"   >
+                                    <option value="">Select Employee </option>
+
+                                </select>
+
+                                </div>
+                            </div>
+
+                            <br/>
+                            <br/>
+
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <button class="btn btn-lg btn-primary " ng-click="addTask(task,emp)" >
+                                    Add Task
+                                </button>
+                                <button class="btn btn-lg btn-primary ">
+                                    Cancel
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+</div>

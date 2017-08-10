@@ -1,0 +1,78 @@
+<div class="add process flow" >
+    <div class="bg-extended">
+        <div class="align-vertical-center">
+
+            <div class="container">
+
+
+
+                <div class="well  col-sm-12">
+
+                    <div class="well-heading well-primary">
+                        <h1>View Task</h1>
+                    </div>
+
+                    <form class="well-body form-horizontal">
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3">Filter By project</label>
+                            <div class="col-sm-8">
+                                <select  class="form-control" ng-model="taskview.project"
+                                         ng-options="x as x.projectName for x in projectList" ng-change="getTaskViewData(taskview.project)">
+                                    <option value="">Select Project </option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                            <ul ng-repeat="(key, value) in taskViewData ">
+
+                                <label  class="control-label ">Project Name:</label>
+                                <label class=" control-label ">{{key}}</label>
+                                <br/>
+                                <li ng-repeat="task in value" >
+                                    <label  class="control-label ">Task Description :</label>{{task.taskDescription}}<br/>
+                                    <label  class="control-label "> Task Start Date :</label>{{task.startDate}}<br/>
+                                    <label  class="control-label "> Task Due Date :</label>{{task.dueDate}}<br/>
+
+                                    <div>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>MID</th>
+                                                <th>Name</th>
+                                                <th style="width:90px"></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat ="emp in task.employee">
+                                                <td>{{emp.employeeId}}</td>
+                                                <td>{{emp.username}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </li>
+
+                                    <br/>
+
+                            </ul>
+
+
+
+
+
+
+
+
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
