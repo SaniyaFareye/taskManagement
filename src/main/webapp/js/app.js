@@ -1,5 +1,5 @@
 'use strict';
-var app= angular.module("app",["ngRoute"]);
+var app= angular.module("app",["ngRoute","angularjs-dropdown-multiselect"]);
 app.config(['$routeProvider',function ($routeProvider){
 
    $routeProvider

@@ -48,10 +48,12 @@
                                 <label  class="control-label col-sm-3">Who Should do this?*</label>
                                 <div class="col-sm-8">
                                         <!--<input id="employee" type="text" class="form-control" ng-model="processInfo.processName" required="required"/>-->
-                                    <select id="employeeList" class="form-control" ng-model="emp" ng-options="x as x.username for x in employeeList"   >
-                                    <option value="">Select Employee </option>
+                                    <!--<select id="employeeList" class="form-control" ng-model="emp" ng-options="x as x.username for x in employeeList"   >-->
+                                    <!--<option value="">Select Employee </option>-->
 
-                                </select>
+                                    <!--</select>-->
+
+                                    <div ng-dropdown-multiselect="" extra-settings="dropdownSetting" options="employeeList" selected-model="selectedEmployees" checkboxes="true" ></div>
 
                                 </div>
                             </div>
@@ -60,7 +62,7 @@
                             <br/>
 
                             <div class="col-sm-offset-3 col-sm-6">
-                                <button class="btn btn-lg btn-primary " ng-click="addTask(task,emp)" >
+                                <button class="btn btn-lg btn-primary " ng-click="addTask(task)" >
                                     Add Task
                                 </button>
                                 <button class="btn btn-lg btn-primary ">
